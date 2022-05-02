@@ -6,11 +6,14 @@ const elementos = [
 ]
 
 const container = document.querySelector('.container h1');
+const div = document.createElement('div');
 
 function createElement(element) {
     const newItem = document.createElement(element.tag)
-    newItem.innerHTML = element.texto;
-    container.appendChild(newItem)
+    const newItemText = document.createTextNode(element.texto);
+    newItem.appendChild(newItemText)
+    div.appendChild(newItem)
+    container.appendChild(div)
 }
 
 elementos.forEach(elemento => createElement(elemento))
